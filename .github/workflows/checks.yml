@@ -1,0 +1,114 @@
+name: checks
+
+# Deployment is already handled by GitHub Pages' built-in
+# pages-build-deployment workflow. This job only guards quality:
+# it runs before/alongside that deploy and fails loudly on regressions.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: No em dashes in copy
+        # Done in python rather than grep: grep -P errors out under a non-UTF-8
+        # locale, and inside an `if` that error would read as "no match" and
+        # silently pass. Referenced by escape so this file never trips its own check.
+        run: |
+          python3 - <<'PY'
+          import io, sys
+
+          DASH = chr(0x2014)
+          bad = []
+          for path in ('index.html', 'README.md'):
+              for n, line in enumerate(io.open(path, encoding='utf-8'), 1):
+                  if DASH in line:
+                      bad.append('%s:%d: %s' % (path, n, line.strip()[:110]))
+
+          for b in bad:
+              print('::error::em dash; rewrite the sentence instead of swapping punctuation -> ' + b)
+          print('em dashes found: %d' % len(bad))
+          sys.exit(1 if bad else 0)
+          PY
+
+      - name: Referenced local assets exist
+        run: |
+          fail=0
+          files=$(grep -oE '(src|href)="[^":#]+\.(css|js|jpg|jpeg|png|webp|svg)"' index.html \
+                  | sed -E 's/.*="([^"]+)"/\1/' | sort -u)
+          for f in $files; do
+            if [ -f "$f" ]; then echo "ok: $f"; else echo "::error::missing asset $f"; fail=1; fi
+          done
+          exit $fail
+
+      - name: Internal anchors resolve
+        run: |
+          fail=0
+          anchors=$(grep -oE 'href="#[A-Za-z0-9_-]+"' index.html \
+                    | sed -E 's/href="#([^"]+)"/\1/' | sort -u)
+          for a in $anchors; do
+            if grep -q "id=\"$a\"" index.html; then echo "ok: #$a"; else
+              echo "::error::dangling anchor #$a"; fail=1; fi
+          done
+          exit $fail
+
+      - name: Portrait stays 4:5 and within budget
+        run: |
+          python3 - <<'PY'
+          import os, struct, sys
+
+          fail = False
+          for root, _, files in os.walk('img'):
+              for f in files:
+                  p = os.path.join(root, f)
+                  kb = os.path.getsize(p) // 1024
+                  print('%s  %d KB' % (p, kb))
+                  if kb > 400:
+                      print('::error::%s is %dKB, over the 400KB budget' % (p, kb))
+                      fail = True
+
+          p = 'img/portrait.jpg'
+          if os.path.exists(p):
+              d = open(p, 'rb').read()
+              i, w, h = 2, None, None
+              while i < len(d) - 9:
+                  if d[i] != 0xFF:
+                      i += 1
+                      continue
+                  m = d[i + 1]
+                  if m in (0xC0, 0xC1, 0xC2):
+                      h, w = struct.unpack('>HH', d[i + 5:i + 9])
+                      break
+                  if m == 0xD8 or 0xD0 <= m <= 0xD9:
+                      i += 2
+                      continue
+                  i += 2 + struct.unpack('>H', d[i + 2:i + 4])[0]
+              print('portrait %sx%s' % (w, h))
+              if not w or round(w / h, 3) != 0.8:
+                  print('::error::portrait ratio is %s/%s, expected 4:5' % (w, h))
+                  fail = True
+              else:
+                  print('ok: 4:5 ratio')
+
+          sys.exit(1 if fail else 0)
+          PY
+
+      - name: External links respond
+        # Warning only: LinkedIn and X routinely 403 CI runners.
+        continue-on-error: true
+        run: |
+          urls=$(grep -oE 'href="https?://[^"]+"' index.html \
+                 | sed -E 's/href="([^"]+)"/\1/' | sort -u)
+          for u in $urls; do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' -L --max-time 20 "$u" || echo 000)
+            case "$code" in
+              2*|3*) echo "ok  $code  $u" ;;
+              *)     echo "::warning::$u returned $code" ;;
+            esac
+          done
