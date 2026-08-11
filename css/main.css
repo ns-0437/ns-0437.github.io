@@ -206,35 +206,8 @@ strong { font-weight: 600; color: var(--text); }
 /* ============================================================
    hero
    ============================================================ */
-.hero { padding: 4.5rem 0 3.5rem; }
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: .55rem;
-  margin: 0 0 1.4rem;
-  padding: .35rem .85rem .35rem .7rem;
-  background: var(--bg-raised);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: .72rem;
-  letter-spacing: .01em;
-  color: var(--text-muted);
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #22a06b;
-  box-shadow: 0 0 0 3px color-mix(in srgb, #22a06b 20%, transparent);
-  animation: pulse 2.6s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: .45; }
-}
+/* 24px above the name, 48px below the tagline, matching the reference rhythm */
+.hero { padding: 1.5rem 0 3rem; }
 
 .hero-name {
   font-family: var(--font-serif);
@@ -242,7 +215,7 @@ strong { font-weight: 600; color: var(--text); }
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -.01em;
-  margin-bottom: .4rem;
+  margin-bottom: .75rem;
 }
 
 .hero-tagline {
@@ -716,7 +689,7 @@ section { padding: 3.5rem 0; }
   .pill-nav-item { padding: .5rem .7rem; }
   .pill-nav-social { display: none; }
 
-  .hero { padding: 2.5rem 0 2rem; }
+  .hero { padding: 1rem 0 2rem; }
   .about-rail { flex-direction: column; }
   .rail-photo { max-width: 100%; }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
