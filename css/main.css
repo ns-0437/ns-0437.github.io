@@ -578,6 +578,22 @@ section { padding: 3.5rem 0; }
   line-height: 1;
 }
 
+/* credential links sit inline after the certificate name; keep them quiet
+   until hovered so they don't compete with the text they belong to */
+.bg-list a {
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s var(--ease);
+}
+.bg-list a::before {
+  content: "\2197";
+  margin-right: .2em;
+  font-size: .85em;
+}
+.bg-list a:hover { border-bottom-color: var(--accent); }
+
 /* ============================================================
    contact
    ============================================================ */
