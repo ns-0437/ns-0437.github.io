@@ -101,13 +101,31 @@ top item automatically gets the filled accent dot.
 **Portrait.** `img/portrait.jpg`, a 4:5 crop at 800×1000. Replace the file at the same
 path and the layout follows; the CSS crops to fill with `object-fit: cover`.
 
+**Add a certification.** Copy an `<li>` in the first `.bg-col` of `#background`. If the
+credential has a public verification page, append an `<a>` inside the same `<li>`; it
+picks up the accent styling and arrow automatically.
+
+## Projects on the page
+
+Ordered by strength, not date. The first three carry a Live badge because they have
+something a visitor can actually open:
+
+| Project | Live | Repo |
+|---|---|---|
+| AgentFuse | dashboard on GitHub Pages | `ns-0437/agentfuse` |
+| The Internet's Worst User Journey | demo on GitHub Pages | `ns-0437/worst-user-journey` |
+| Relevant Section Identification | app on Cloud Run | `ns-0437/relevant-section-identification` |
+| Research Scout | no | not yet linked |
+| AI Résumé Optimizer | no | not yet linked |
+| Human Activity Recognition in the Dark | no | not yet linked |
+| Natural Sound Recognition | no | not yet linked |
+
 ## Still to do
 
 - `#writing` holds three **placeholder** posts marked `is-todo`. Write them or delete
   the whole `<section id="writing">`; an empty blog reads worse than none.
-- Project cards for Research Scout, Résumé Optimizer, HAR-in-Dark and Natural Sound
-  Recognition link to your GitHub profile, not to their repos. Point them at the real
-  repo URLs.
+- The four projects marked "not yet linked" above point at the GitHub profile rather
+  than their own repos. Point them at real URLs.
 - Add `og-image.png` (1200×630) and an `og:image` meta tag so links preview properly
   when shared.
 
