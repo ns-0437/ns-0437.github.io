@@ -259,6 +259,31 @@
         </div>
       </article>
 
+      <article class="card is-feature">
+        <div class="card-top">
+          <span class="card-kicker">Retrieval</span>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <h3 class="card-title">Relevant Section Identification</h3>
+        <p class="card-sub">Which pages of this PDF answer my question?</p>
+        <p class="card-body">
+          Give it a PDF and a natural-language query and it returns the pages and section
+          headings that answer it. Prose, tables and figures take three separate chunking
+          paths so structure survives, then retrieval fuses dense cosine with BM25 60/40.
+          The two fixes that actually moved <strong>nDCG@5 from 0.645 to 0.710</strong> were
+          in extraction, not ranking: reading tables from the text layer instead of OCRing a
+          rendered image, and stripping the running header that made every page match
+          equally. Open weights only, no API keys.
+        </p>
+        <ul class="tags">
+          <li>EmbeddingGemma</li><li>ChromaDB</li><li>BM25</li><li>unstructured</li><li>Cloud Run</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://relevant-section-identification-qqgcuwkcmq-uc.a.run.app" target="_blank" rel="noopener">Live app <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/ns-0437/relevant-section-identification" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
       <article class="card">
         <div class="card-top">
           <span class="card-kicker">Autonomous research</span>
