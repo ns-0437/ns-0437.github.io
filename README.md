@@ -101,9 +101,24 @@ top item automatically gets the filled accent dot.
 **Portrait.** `img/portrait.jpg`, a 4:5 crop at 800×1000. Replace the file at the same
 path and the layout follows; the CSS crops to fill with `object-fit: cover`.
 
-**Add a certification.** Copy an `<li>` in the first `.bg-col` of `#background`. If the
+**Add a certification.** Copy an `<li>` in the Education column of `#background`. If the
 credential has a public verification page, append an `<a>` inside the same `<li>`; it
 picks up the accent styling and arrow automatically.
+
+## The Background section
+
+`#background` is a 3-across grid of `.bg-col` blocks that wraps, so the five columns
+sit as three then two. Adding or removing a column needs no CSS change; the grid
+reflows. Row gap is deliberately wider than column gap (64px vs 48px) so the two rows
+do not read as one list.
+
+| Column | Holds |
+|---|---|
+| Education & Certifications | degree, then credentials with verify links |
+| Retrieval Strategies | vector, hybrid, reranking, HyDE, metadata, chunking |
+| LLMs & Agents | fine-tuning, agent frameworks, MCP, vector stores |
+| Evaluation & Reliability | retrieval and detection metrics, failure analysis |
+| Technical Expertise | languages, ML stack, data, production, CI/CD |
 
 ## Projects on the page
 
