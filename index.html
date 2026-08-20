@@ -395,15 +395,36 @@
       </div>
 
       <div class="bg-col">
-        <h3 class="bg-col-title">LLMs, Agents &amp; Evaluation</h3>
+        <h3 class="bg-col-title">Retrieval Strategies</h3>
+        <ul class="bg-list">
+          <li>Vector search: dense embedding retrieval with cosine similarity</li>
+          <li>Hybrid search: dense scores fused with BM25 over min-max normalised ranks</li>
+          <li>Reranking: section-aware score propagation, then collapsing to ranked pages</li>
+          <li>HyDE: hypothetical document embeddings for under-specified queries</li>
+          <li>Metadata filtering: page, section heading, and chunk type carried per chunk</li>
+          <li>Structure-aware chunking for prose, tables, and figures</li>
+        </ul>
+      </div>
+
+      <div class="bg-col">
+        <h3 class="bg-col-title">LLMs &amp; Agents</h3>
         <ul class="bg-list">
           <li>Supervised fine-tuning (SFT): GPT-4o, BERT, RT-DETR</li>
           <li>Agent frameworks: LangGraph, OpenAI AgentKit, LangChain</li>
           <li>MCP orchestration, tool use, structured outputs</li>
-          <li>RAG pipelines: ChromaDB, FAISS, EmbeddingGemma, text-embedding-3-small</li>
-          <li>Hybrid retrieval: dense cosine fused with BM25, structure-aware chunking</li>
-          <li>Benchmarks: nDCG@k, mAP, per-class precision/recall, latency</li>
-          <li>Model failure analysis and version-over-version regression</li>
+          <li>Vector stores and embeddings: ChromaDB, FAISS, EmbeddingGemma,
+            text-embedding-3-small</li>
+        </ul>
+      </div>
+
+      <div class="bg-col">
+        <h3 class="bg-col-title">Evaluation &amp; Reliability</h3>
+        <ul class="bg-list">
+          <li>Retrieval metrics: nDCG@k, precision and recall at k</li>
+          <li>Detection metrics: mAP, per-class precision/recall, latency</li>
+          <li>Model failure analysis on misclassified samples</li>
+          <li>Version-over-version quality regression</li>
+          <li>Runtime profiling and inference optimization</li>
         </ul>
       </div>
 
