@@ -540,7 +540,9 @@ section { padding: 3.5rem 0; }
 .bg-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 3rem;
+  /* wider row gap than column gap: once this wraps to a second row, matching
+     gaps make the two bands read as one long list */
+  gap: 4rem 3rem;
 }
 
 .bg-col-title {
@@ -689,7 +691,7 @@ section { padding: 3.5rem 0; }
   .rail-photo { max-width: 220px; }
   .rail-card { flex: 1; }
   .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .bg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+  .bg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.75rem 2rem; }
 }
 
 @media (max-width: 720px) {
