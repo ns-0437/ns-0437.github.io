@@ -397,12 +397,15 @@
       <div class="bg-col">
         <h3 class="bg-col-title">Retrieval Strategies</h3>
         <ul class="bg-list">
-          <li>Vector search: dense embedding retrieval with cosine similarity</li>
-          <li>Hybrid search: dense scores fused with BM25 over min-max normalised ranks</li>
-          <li>Reranking: section-aware score propagation, then collapsing to ranked pages</li>
-          <li>HyDE: hypothetical document embeddings for under-specified queries</li>
-          <li>Metadata filtering: page, section heading, and chunk type carried per chunk</li>
-          <li>Structure-aware chunking for prose, tables, and figures</li>
+          <li>Vector search: dense cosine over EmbeddingGemma-300m vectors in ChromaDB</li>
+          <li>Keyword search: BM25 across the same chunk set</li>
+          <li>Hybrid search: the two fused at alpha 0.6 over min-max normalised scores,
+            chosen from a sweep showing a plateau across 0.5 to 0.8</li>
+          <li>Section expansion: a chunk inherits a decayed score from the best chunk under
+            its heading, capped at four to stop one weak hit injecting a whole section</li>
+          <li>Page aggregation: chunk hits collapse to pages within 55% of the top score,
+            capped at eight, since a fixed top-k is wrong in both directions</li>
+          <li>Metadata per chunk: page number, section heading, chunk type, table source</li>
         </ul>
       </div>
 
