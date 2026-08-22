@@ -406,6 +406,9 @@
           <li>Page aggregation: chunk hits collapse to pages within 55% of the top score,
             capped at eight, since a fixed top-k is wrong in both directions</li>
           <li>Metadata per chunk: page number, section heading, chunk type, table source</li>
+          <li>Measured and rejected on this corpus: HyDE with Qwen2.5-1.5B-Instruct
+            (nDCG@5 0.710 to 0.684), cross-encoder reranking with BAAI/bge-reranker-base
+            (0.728 to 0.727), and metadata as a separate scoring channel (0.710 to 0.704)</li>
         </ul>
       </div>
 
