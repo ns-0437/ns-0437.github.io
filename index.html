@@ -269,14 +269,20 @@
         <p class="card-body">
           Give it a PDF and a natural-language query and it returns the pages and section
           headings that answer it. Prose, tables and figures take three separate chunking
-          paths so structure survives, then retrieval fuses dense cosine with BM25 60/40.
-          The two fixes that actually moved <strong>nDCG@5 from 0.645 to 0.710</strong> were
-          in extraction, not ranking: reading tables from the text layer instead of OCRing a
-          rendered image, and stripping the running header that made every page match
-          equally. Open weights only, no API keys.
+          paths so structure survives, then EmbeddingGemma vectors fuse with BM25 at 0.6.
+          Evaluated on 45 graded queries with 12 held out: <strong>nDCG@5 0.645 to
+          0.728</strong>, hit@3 82% to 93%.
+        </p>
+        <p class="card-body">
+          The interesting part is what did <em>not</em> work. HyDE, cross-encoder reranking
+          and metadata scoring were each built and measured, and each lost ground. Every
+          point came instead from repairing what the index contained: reading tables from the
+          embedded text layer rather than OCRing a picture of them, and stripping the running
+          header that made all 40 pages match a query equally. Retrieval quality here was
+          never a ranking problem, it was an extraction problem wearing a ranking costume.
         </p>
         <ul class="tags">
-          <li>EmbeddingGemma</li><li>ChromaDB</li><li>BM25</li><li>unstructured</li><li>Cloud Run</li>
+          <li>EmbeddingGemma</li><li>ChromaDB</li><li>BM25</li><li>unstructured</li><li>pdfplumber</li><li>Cloud Run</li>
         </ul>
         <div class="card-links">
           <a href="https://relevant-section-identification-qqgcuwkcmq-uc.a.run.app" target="_blank" rel="noopener">Live app <span aria-hidden="true">↗</span></a>
