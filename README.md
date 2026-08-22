@@ -107,18 +107,25 @@ picks up the accent styling and arrow automatically.
 
 ## The Background section
 
-`#background` is a 3-across grid of `.bg-col` blocks that wraps, so the five columns
-sit as three then two. Adding or removing a column needs no CSS change; the grid
+`#background` is a 3-across grid of `.bg-col` blocks that wraps, so the six columns
+sit as two rows of three. Adding or removing a column needs no CSS change; the grid
 reflows. Row gap is deliberately wider than column gap (64px vs 48px) so the two rows
 do not read as one list.
 
 | Column | Holds |
 |---|---|
 | Education & Certifications | degree, then credentials with verify links |
-| Retrieval Strategies | vector, hybrid, reranking, HyDE, metadata, chunking |
-| LLMs & Agents | fine-tuning, agent frameworks, MCP, vector stores |
-| Evaluation & Reliability | retrieval and detection metrics, failure analysis |
+| Retrieval Strategies | vector, BM25, hybrid fusion, section expansion, page aggregation |
+| Document Processing | partitioning, the three chunking paths, table and boilerplate handling |
+| Models & Agents | fine-tuning, agent frameworks, and the named models by role |
+| Evaluation & Reliability | graded relevance, holdout splits, failure taxonomy, profiling |
 | Technical Expertise | languages, ML stack, data, production, CI/CD |
+
+Content in the retrieval, processing, model and evaluation columns is sourced from the
+Relevant Section Identification technical report. Keep it that way: every claim there
+should trace to a measurement, including the negative ones. HyDE, cross-encoder
+reranking and metadata scoring are listed as **rejected with deltas** rather than as
+capabilities, because that is what the evaluation found.
 
 ## Projects on the page
 
