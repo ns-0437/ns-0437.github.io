@@ -413,6 +413,23 @@
       </div>
 
       <div class="bg-col">
+        <h3 class="bg-col-title">Document Processing</h3>
+        <ul class="bg-list">
+          <li>Layout-aware partitioning with unstructured hi_res, typing every block as
+            title, prose, table or image</li>
+          <li>Three chunking paths that never share code, so structure survives: prose
+            grouped by section title, tables to markdown, figures to caption plus OCR</li>
+          <li>Chunk sizing: 1000 minimum, 3000 soft, 5000 hard, with 500 characters of
+            overlap applied between adjacent chunks and not only inside oversized ones</li>
+          <li>Tables read with pdfplumber from the embedded text layer rather than OCR of a
+            rendered image, which recovered a symbol column the index was missing entirely</li>
+          <li>Generic boilerplate detection: lines appearing on 60% or more of pages are
+            dropped, which cleared 226 of 852 elements and 57 false section titles</li>
+          <li>Tesseract OCR with stopword filtering for figure keywords</li>
+        </ul>
+      </div>
+
+      <div class="bg-col">
         <h3 class="bg-col-title">LLMs &amp; Agents</h3>
         <ul class="bg-list">
           <li>Supervised fine-tuning (SFT): GPT-4o, BERT, RT-DETR</li>
