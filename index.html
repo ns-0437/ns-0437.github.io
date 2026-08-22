@@ -447,11 +447,15 @@
       <div class="bg-col">
         <h3 class="bg-col-title">Evaluation &amp; Reliability</h3>
         <ul class="bg-list">
-          <li>Retrieval metrics: nDCG@k, precision and recall at k</li>
+          <li>Retrieval metrics: nDCG@k, hit@k, recall@k over graded relevance, where a
+            complete answer and a passing mention score differently</li>
+          <li>Held-out splits: 12 of 45 queries never inspected while tuning anything</li>
+          <li>Failure taxonomy: queries tagged by kind (word, symbol, table, figure, multi)
+            because those classes fail for different reasons and an average hides it</li>
           <li>Detection metrics: mAP, per-class precision/recall, latency</li>
-          <li>Model failure analysis on misclassified samples</li>
-          <li>Version-over-version quality regression</li>
-          <li>Runtime profiling and inference optimization</li>
+          <li>Version-over-version quality regression across index builds</li>
+          <li>Runtime profiling: separating what the GPU helps (indexing, 7x) from what it
+            does not (query time, 117 ms against 119 ms)</li>
         </ul>
       </div>
 
