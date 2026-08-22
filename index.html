@@ -430,13 +430,17 @@
       </div>
 
       <div class="bg-col">
-        <h3 class="bg-col-title">LLMs &amp; Agents</h3>
+        <h3 class="bg-col-title">Models &amp; Agents</h3>
         <ul class="bg-list">
           <li>Supervised fine-tuning (SFT): GPT-4o, BERT, RT-DETR</li>
-          <li>Agent frameworks: LangGraph, OpenAI AgentKit, LangChain</li>
-          <li>MCP orchestration, tool use, structured outputs</li>
-          <li>Vector stores and embeddings: ChromaDB, FAISS, EmbeddingGemma,
-            text-embedding-3-small</li>
+          <li>Agent frameworks: LangGraph, OpenAI AgentKit, LangChain, MCP orchestration</li>
+          <li>Embeddings: google/embeddinggemma-300m, an asymmetric prompt-conditioned model
+            at 768 dimensions, plus text-embedding-3-small</li>
+          <li>Cross-encoder: BAAI/bge-reranker-base</li>
+          <li>Generation: Qwen2.5-1.5B-Instruct for grounded answers and HyDE passages</li>
+          <li>Vision: llava-interleave-qwen-0.5b for figure captioning, chosen over
+            llava-1.5-7b because 4 GB of VRAM could not hold the larger model</li>
+          <li>Vector stores: ChromaDB with cosine HNSW, FAISS</li>
         </ul>
       </div>
 
