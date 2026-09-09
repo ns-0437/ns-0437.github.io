@@ -491,6 +491,10 @@
         <ul class="bg-list">
           <li>Supervised fine-tuning (SFT): GPT-4o, BERT, RT-DETR</li>
           <li>Agent frameworks: LangGraph, OpenAI AgentKit, LangChain, MCP orchestration</li>
+          <li>Tool-calling loops with a forced terminal tool, so every turn returns a
+            structured object carrying a confidence score instead of free text</li>
+          <li>Human-in-the-loop routing: confidence computed from tool outcomes rather than
+            self-reported, with risk-based escalation that overrides it</li>
           <li>Embeddings: google/embeddinggemma-300m, an asymmetric prompt-conditioned model
             at 768 dimensions, plus text-embedding-3-small</li>
           <li>Cross-encoder: BAAI/bge-reranker-base</li>
