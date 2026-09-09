@@ -129,12 +129,13 @@ capabilities, because that is what the evaluation found.
 
 ## Projects on the page
 
-Ordered by strength, not date. The first three carry a Live badge because they have
+Ordered by strength, not date. The first four carry a Live badge because they have
 something a visitor can actually open:
 
 | Project | Live | Repo |
 |---|---|---|
 | AgentFuse | dashboard on GitHub Pages | `ns-0437/agentfuse` |
+| AI Defense Lab for Payment Security | app on Cloud Run | `ns-0437/mastercard-fraud-defense` |
 | The Internet's Worst User Journey | demo on GitHub Pages | `ns-0437/worst-user-journey` |
 | Relevant Section Identification | app on Cloud Run | `ns-0437/relevant-section-identification` |
 | Research Scout | no | not yet linked |
