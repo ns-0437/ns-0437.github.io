@@ -238,6 +238,31 @@
 
       <article class="card is-feature">
         <div class="card-top">
+          <span class="card-kicker">Adversarial ML</span>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <h3 class="card-title">AI Defense Lab for Payment Security</h3>
+        <p class="card-sub">Red team and blue team, wired into a loop</p>
+        <p class="card-body">
+          Built for the Mastercard Innovation Challenge 2026. A knowledge graph of payment-fraud
+          vectors feeds an attack simulator, which feeds an XGBoost detector trained on tabular
+          plus graph features. Missed detections route back as harder variants, so the
+          detector's own blind spots choose what attacks it faces next. Across three runs the
+          loop found a real generalization gap every time, retraining closed each one with no
+          regression elsewhere, and 5 of 5 hand-crafted evasions were caught. Which gap it
+          surfaces varies by run, so the writeup reports all three rather than the best one.
+        </p>
+        <ul class="tags">
+          <li>XGBoost</li><li>NetworkX</li><li>Knowledge graph</li><li>FastAPI</li><li>Cloud Run</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://aidefenselab-frontend-gwezm4pj4a-uc.a.run.app" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/ns-0437/mastercard-fraud-defense" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card is-feature">
+        <div class="card-top">
           <span class="card-kicker">Observability</span>
           <span class="badge badge-live">Live</span>
         </div>
