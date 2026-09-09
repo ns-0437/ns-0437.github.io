@@ -733,3 +733,14 @@ section { padding: 3.5rem 0; }
   .card, .bg-col { break-inside: avoid; box-shadow: none; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* shown where a project has no public repo, so the row keeps its baseline
+   without offering a link that goes nowhere useful */
+.card-note {
+  margin-top: auto;
+  padding-top: .3rem;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  color: var(--text-faint);
+}
