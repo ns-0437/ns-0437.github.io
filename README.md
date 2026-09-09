@@ -147,12 +147,12 @@ they have something a visitor can actually open:
 
 ## Still to do
 
-- `#writing` holds three **placeholder** posts marked `is-todo`. Write them or delete
-  the whole `<section id="writing">`; an empty blog reads worse than none.
-- The four projects marked "not yet linked" above point at the GitHub profile rather
-  than their own repos. Point them at real URLs.
-- Add `og-image.png` (1200×630) and an `og:image` meta tag so links preview properly
-  when shared.
+- The blog section was removed rather than shipped with placeholder posts. To bring it
+  back, restore the `<section id="writing">` block from git history and point the
+  fourth nav item at `#writing` again.
+- `AI Résumé Optimizer` shows "Source kept private" because `ns-0437/resume-optimizer`
+  is a private repo. Making it public turns that note back into a link.
+- `Natural Sound Recognition` has no repo on the account at all.
 
 ## Notes
 
