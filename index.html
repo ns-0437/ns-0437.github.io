@@ -272,8 +272,11 @@
           Errors are observable; frustration usually isn't. This reconstructs the path of
           customers who had a terrible experience while every dashboard stayed green,
           joining sessions, OpenTelemetry spans, and deploy diffs into one evidence-backed
-          <em>Ghost Story</em> and a concrete fix. A deterministic correlation engine, not a
-          model guessing at causes.
+          <em>Ghost Story</em> and a concrete fix. The worked case: a payment call returns
+          <code>pending</code>, a retry loop from one deploy adds 6.8 seconds with no UI
+          feedback, the request eventually succeeds so monitoring stays green, and 184
+          customers rage-click and leave. The correlation engine is a deterministic join,
+          not a model guessing at causes.
         </p>
         <ul class="tags">
           <li>Node / Express</li><li>React</li><li>OpenTelemetry</li><li>SSE</li>
