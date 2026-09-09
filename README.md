@@ -129,8 +129,9 @@ capabilities, because that is what the evaluation found.
 
 ## Projects on the page
 
-Ordered by strength, not date. The first four carry a Live badge because they have
-something a visitor can actually open:
+Listed in page order. The first four lead because they are the strongest, not because
+they are the newest; anything added later is appended. Five carry a Live badge because
+they have something a visitor can actually open:
 
 | Project | Live | Repo |
 |---|---|---|
@@ -142,6 +143,7 @@ something a visitor can actually open:
 | AI Résumé Optimizer | no | not yet linked |
 | Human Activity Recognition in the Dark | no | not yet linked |
 | Natural Sound Recognition | no | not yet linked |
+| Reformly Support Copilot | app on Vercel | `ns-0437/reformly-support-copilot` |
 
 ## Still to do
 
