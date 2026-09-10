@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ns-0437.github.io/sitemap.xml
