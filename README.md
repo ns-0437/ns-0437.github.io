@@ -1,13 +1,17 @@
 # Portfolio: Navin Kumar
 
-Static portfolio site. No build step, no dependencies, no framework. Three files
-you can edit directly and push.
+Static portfolio site. No build step, no dependencies, no framework. Plain files you
+edit directly and push.
 
 ```
 portfolio/
-  index.html      all content lives here
+  index.html      all page content lives here
+  404.html        error page, reuses main.css and the saved theme
+  robots.txt      points crawlers at the sitemap
+  sitemap.xml     one URL, since the site is a single page
   css/main.css    design tokens at the top, sections below
   js/main.js      theme toggle, scroll reveal, active nav
+  img/            portrait, og-image, favicons
 ```
 
 ## Run it locally
@@ -45,6 +49,7 @@ seconds:
 | Internal anchors | a `href="#foo"` has no matching `id="foo"` |
 | Image budget | anything in `img/` exceeds 400 KB |
 | Portrait ratio | `img/portrait.jpg` is not 4:5 |
+| Site metadata | the favicon, og-image, 404, robots or sitemap is missing, a canonical/og:image/JSON-LD tag is absent, or the structured data does not parse |
 | External links | never fails, warns only (LinkedIn and X often block CI runners) |
 
 Run the em dash check locally before pushing if you want. It matches by codepoint, so
@@ -105,6 +110,13 @@ path and the layout follows; the CSS crops to fill with `object-fit: cover`.
 credential has a public verification page, append an `<a>` inside the same `<li>`; it
 picks up the accent styling and arrow automatically.
 
+## Regenerating images
+
+`img/og-image.png` (1200x630) and the favicons are generated, not hand-drawn. Both
+scripts build them from the same tokens the CSS uses, so re-running after a palette
+change keeps them in step. If you replace `img/portrait.jpg`, regenerate the og-image
+so the preview card matches.
+
 ## The Background section
 
 `#background` is a 3-across grid of `.bg-col` blocks that wraps, so the six columns
@@ -139,10 +151,10 @@ they have something a visitor can actually open:
 | AI Defense Lab for Payment Security | app on Cloud Run | `ns-0437/mastercard-fraud-defense` |
 | The Internet's Worst User Journey | demo on GitHub Pages | `ns-0437/worst-user-journey` |
 | Relevant Section Identification | app on Cloud Run | `ns-0437/relevant-section-identification` |
-| Research Scout | no | not yet linked |
-| AI Résumé Optimizer | no | not yet linked |
-| Human Activity Recognition in the Dark | no | not yet linked |
-| Natural Sound Recognition | no | not yet linked |
+| Research Scout | no | `ns-0437/research-scout` |
+| AI Résumé Optimizer | no | private, not linked |
+| Human Activity Recognition in the Dark | no | `ns-0437/Human-Activity-Recognition-in-Dark` |
+| Natural Sound Recognition | no | no repo |
 | Reformly Support Copilot | app on Vercel | `ns-0437/reformly-support-copilot` |
 
 ## Still to do
