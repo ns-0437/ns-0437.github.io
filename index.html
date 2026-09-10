@@ -262,9 +262,13 @@
         <p class="card-body">
           Long-running agents don't crash. They drift. AgentFuse sits <em>above</em> the
           execution graph, watches the telemetry every framework already emits, and trips a
-          breaker the moment a failure mode crosses a threshold. On a trip it freezes state,
-          asks a separate reasoning model for a steering correction, and resumes. When recovery
-          isn't safe it escalates to a human instead. One engine, three runtimes.
+          breaker the moment a failure mode crosses a threshold: an infinite tool loop, a slow
+          slide off the original objective, a logical trap where the model reasons flawlessly
+          from a false premise, or a budget quietly burning to zero. On a trip it freezes
+          state, asks a separate reasoning model for a steering correction, and resumes. When
+          recovery isn't safe it escalates to a human instead of blindly retrying. The premise
+          throughout: an agent that has drifted is the worst possible judge of whether it
+          drifted. One engine, three runtimes.
         </p>
         <ul class="tags">
           <li>OpenAI AgentKit</li><li>LangGraph</li><li>Python</li><li>Observability</li>
