@@ -443,6 +443,33 @@
 
       <article class="card">
         <div class="card-top">
+          <span class="card-kicker">Agent tooling</span>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <h3 class="card-title">Dep Graph Generator</h3>
+        <p class="card-sub">Which tool has to run before this one?</p>
+        <p class="card-body">
+          Reads a Composio toolkit catalog and emits a graph of which tools' outputs feed
+          which tools' required inputs, so an agent knows what to call first. Literal field
+          matching scores near zero: a comment tool wants <code>issue_number</code>, but the
+          list tool returns <code>Issue.number</code> several <code>$ref</code> hops deep. The
+          generator walks the schema graph, scores token matches corroborated by the owning
+          type name, and sends only the 227 fields heuristics cannot resolve to an LLM in
+          batches. Treating caller-supplied fields like <code>owner</code> and
+          <code>repo</code> as context cut about 4,000 edges to 2,107 across 893 tools, and a
+          two-tool synthetic catalog caught a filter that returned zero edges on small toolkits.
+        </p>
+        <ul class="tags">
+          <li>TypeScript</li><li>JSON Schema</li><li>OpenAI SDK</li><li>Force layout</li><li>GitHub Pages</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://ns-0437.github.io/dep-graph-generator/" target="_blank" rel="noopener">Live graph <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/ns-0437/dep-graph-generator" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
           <span class="card-kicker">Production agents</span>
           <span class="badge badge-live">Live</span>
         </div>
