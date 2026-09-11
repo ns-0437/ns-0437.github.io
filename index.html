@@ -532,6 +532,7 @@
         <h3 class="bg-col-title">Retrieval Strategies</h3>
         <ul class="bg-list">
           <li>Vector search: dense cosine over EmbeddingGemma-300m vectors in ChromaDB</li>
+          <li>Vector stores: ChromaDB with cosine HNSW indexes, FAISS</li>
           <li>Keyword search: BM25 across the same chunk set</li>
           <li>Hybrid search: the two fused at alpha 0.6 over min-max normalised scores,
             chosen from a sweep showing a plateau across 0.5 to 0.8</li>
@@ -581,7 +582,6 @@
           <li>Generation: Qwen2.5-1.5B-Instruct for grounded answers and HyDE passages</li>
           <li>Vision: llava-interleave-qwen-0.5b for figure captioning, chosen over
             llava-1.5-7b because 4 GB of VRAM could not hold the larger model</li>
-          <li>Vector stores: ChromaDB with cosine HNSW, FAISS</li>
         </ul>
       </div>
 
@@ -597,6 +597,7 @@
             because those classes fail for different reasons and an average hides it</li>
           <li>Detection metrics: mAP, per-class precision/recall, latency</li>
           <li>Version-over-version quality regression across index builds</li>
+          <li>Schema-validated LLM output with Zod, plus per-request cost tracking</li>
           <li>Runtime profiling: separating what the GPU helps (indexing, 7x) from what it
             does not (query time, 117 ms against 119 ms)</li>
         </ul>
@@ -613,7 +614,6 @@
           <li>Backend: FastAPI, NestJS, Next.js, PostgreSQL with pgvector, Redis</li>
           <li>Async work: BullMQ queues, idempotent webhooks, resumable background jobs,
             retry with backoff on flaky third-party APIs</li>
-          <li>Schema-validated LLM output with Zod, plus per-request cost tracking</li>
           <li>CI/CD: GitHub Actions, automated build and deploy pipelines</li>
           <li>Deploys: Docker, GCP Cloud Run, Vercel, Supabase, Upstash</li>
           <li>Familiar with AWS (ECS/EKS), Git/GitHub, REST APIs</li>
