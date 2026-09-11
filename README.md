@@ -97,7 +97,7 @@ asset path in `index.html` is relative.
 (light) and `[data-theme="dark"]`. Change `--accent` and the whole page follows.
 
 **Add a project.** Copy any `<article class="card">` block in the projects grid.
-`is-feature` is only a marker for the two headline projects; the grid is 2-up
+`is-feature` marks the four headline projects that lead the grid; the grid is 2-up
 regardless.
 
 **Add a role.** Copy a `<div class="tl-item">` in the timeline, newest first. The
