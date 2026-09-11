@@ -26,7 +26,7 @@ jobs:
 
           DASH = chr(0x2014)
           bad = []
-          for path in ('index.html', 'README.md'):
+          for path in ('index.html', 'README.md', '404.html'):
               for n, line in enumerate(io.open(path, encoding='utf-8'), 1):
                   if DASH in line:
                       bad.append('%s:%d: %s' % (path, n, line.strip()[:110]))

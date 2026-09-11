@@ -44,7 +44,7 @@ seconds:
 
 | Check | Fails the build when |
 |---|---|
-| Em dashes | an em dash appears in `index.html` or `README.md` |
+| Em dashes | an em dash appears in `index.html`, `404.html` or `README.md` |
 | Local assets | a `src`/`href` points at a css/js/image file that isn't in the repo |
 | Internal anchors | a `href="#foo"` has no matching `id="foo"` |
 | Image budget | anything in `img/` exceeds 400 KB |
@@ -56,7 +56,7 @@ Run the em dash check locally before pushing if you want. It matches by codepoin
 the command doesn't contain the character it's looking for:
 
 ```bash
-python3 -c "import io,sys;d=chr(0x2014);print([f'{p}:{n}' for p in ('index.html','README.md') for n,l in enumerate(io.open(p,encoding='utf-8'),1) if d in l] or 'clean')"
+python3 -c "import io,sys;d=chr(0x2014);print([f'{p}:{n}' for p in ('index.html','404.html','README.md') for n,l in enumerate(io.open(p,encoding='utf-8'),1) if d in l] or 'clean')"
 ```
 
 ## Custom domain (sharmanavin.me)
