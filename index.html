@@ -568,6 +568,9 @@
             structured object carrying a confidence score instead of free text</li>
           <li>Human-in-the-loop routing: confidence computed from tool outcomes rather than
             self-reported, with risk-based escalation that overrides it</li>
+          <li>Heuristics first, model second: deterministic scoring resolves most cases and
+            only the unresolved remainder goes to an LLM in batched calls, keeping cost off
+            an O(n&sup2;) search</li>
           <li>Embeddings: google/embeddinggemma-300m, an asymmetric prompt-conditioned model
             at 768 dimensions, plus text-embedding-3-small</li>
           <li>Cross-encoder: BAAI/bge-reranker-base</li>
