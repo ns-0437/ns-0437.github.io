@@ -38,12 +38,18 @@ jobs:
           PY
 
       - name: Referenced local assets exist
+        # Covers both pages. 404.html uses root-relative paths (/css/main.css) because
+        # Pages serves it from whatever URL was missed, so the leading slash is stripped
+        # before resolving against the repo root.
         run: |
           fail=0
-          files=$(grep -oE '(src|href)="[^":#]+\.(css|js|jpg|jpeg|png|webp|svg)"' index.html \
-                  | sed -E 's/.*="([^"]+)"/\1/' | sort -u)
-          for f in $files; do
-            if [ -f "$f" ]; then echo "ok: $f"; else echo "::error::missing asset $f"; fail=1; fi
+          for page in index.html 404.html; do
+            refs=$(grep -oE '(src|href)="[^":#]+\.(css|js|jpg|jpeg|png|webp|svg|ico)"' "$page" \
+                   | sed -E 's/.*="([^"]+)"/\1/' | sort -u)
+            for f in $refs; do
+              path="${f#/}"
+              if [ -f "$path" ]; then echo "ok: $page -> $f"; else echo "::error::$page references missing asset $f"; fail=1; fi
+            done
           done
           exit $fail
 

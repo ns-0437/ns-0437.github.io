@@ -45,7 +45,7 @@ seconds:
 | Check | Fails the build when |
 |---|---|
 | Em dashes | an em dash appears in `index.html`, `404.html` or `README.md` |
-| Local assets | a `src`/`href` points at a css/js/image file that isn't in the repo |
+| Local assets | a `src`/`href` in `index.html` or `404.html` points at a css/js/image/icon file that isn't in the repo, root-relative paths included |
 | Internal anchors | a `href="#foo"` has no matching `id="foo"` |
 | Image budget | anything in `img/` exceeds 400 KB |
 | Portrait ratio | `img/portrait.jpg` is not 4:5 |
