@@ -129,13 +129,14 @@ do not read as one list.
 | Education & Certifications | degree, then credentials with verify links |
 | Retrieval Strategies | vector, BM25, hybrid fusion, section expansion, page aggregation |
 | Document Processing | partitioning, the three chunking paths, table and boilerplate handling |
-| Models & Agents | fine-tuning, agent frameworks, and the named models by role |
-| Evaluation & Reliability | graded relevance, holdout splits, failure taxonomy, profiling |
-| Technical Expertise | languages, ML stack, data, production, CI/CD |
+| Models & Agents | fine-tuning, agent frameworks, reliability patterns, named models by role |
+| Evaluation & Reliability | graded relevance, holdout splits, generalization checks, failure taxonomy, profiling |
+| Technical Expertise | languages, ML stack, data, graphs, production, CI/CD |
 
-Content in the retrieval, processing, model and evaluation columns is sourced from the
-Relevant Section Identification technical report. Keep it that way: every claim there
-should trace to a measurement, including the negative ones. HyDE, cross-encoder
+Retrieval and document processing content is sourced from the Relevant Section
+Identification technical report; the reliability, fallback and generalization lines trace
+to the Reformly copilot and dependency graph generator repos. Keep it that way: every claim
+should trace to a project or a measurement, including the negative ones. HyDE, cross-encoder
 reranking and metadata scoring are listed as **rejected with deltas** rather than as
 capabilities, because that is what the evaluation found.
 
