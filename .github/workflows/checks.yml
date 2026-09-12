@@ -115,7 +115,8 @@ jobs:
 
           for path in ('404.html', 'robots.txt', 'sitemap.xml',
                        'img/og-image.png', 'img/favicon.svg',
-                       'img/favicon.ico', 'img/apple-touch-icon.png'):
+                       'img/favicon.ico', 'img/apple-touch-icon.png',
+                       'Navin-Kumar-Resume.pdf'):
               if os.path.exists(path):
                   print('ok: %s' % path)
               else:
@@ -126,11 +127,22 @@ jobs:
               ('og:image', 'og:image tag'),
               ('application/ld+json', 'structured data'),
               ('rel="icon"', 'favicon link'),
+              ('Navin-Kumar-Resume.pdf', 'resume link'),
           ):
               if needle in html:
                   print('ok: %s' % label)
               else:
                   fail.append('missing %s' % label)
+
+          pdf = 'Navin-Kumar-Resume.pdf'
+          if os.path.exists(pdf):
+              kb = os.path.getsize(pdf) // 1024
+              print('resume: %d KB' % kb)
+              if kb > 2048:
+                  fail.append('%s is %dKB, over the 2MB budget' % (pdf, kb))
+              with open(pdf, 'rb') as fh:
+                  if fh.read(4) != b'%PDF':
+                      fail.append('%s is not a PDF' % pdf)
 
           m = re.search(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
           if m:
