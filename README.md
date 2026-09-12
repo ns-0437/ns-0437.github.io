@@ -7,6 +7,7 @@ edit directly and push.
 portfolio/
   index.html      all page content lives here
   404.html        error page, reuses main.css and the saved theme
+  Navin-Kumar-Resume.pdf   linked from the rail card and the contact section
   robots.txt      points crawlers at the sitemap
   sitemap.xml     one URL, since the site is a single page
   css/main.css    design tokens at the top, sections below
@@ -49,7 +50,7 @@ seconds:
 | Internal anchors | a `href="#foo"` has no matching `id="foo"` |
 | Image budget | anything in `img/` exceeds 400 KB |
 | Portrait ratio | `img/portrait.jpg` is not 4:5 |
-| Site metadata | the favicon, og-image, 404, robots or sitemap is missing, a canonical/og:image/JSON-LD tag is absent, or the structured data does not parse |
+| Site metadata | the favicon, og-image, 404, robots, sitemap or resume PDF is missing, the resume is over 2MB or not a real PDF, a canonical/og:image/JSON-LD tag is absent, or the structured data does not parse |
 | External links | never fails, warns only (LinkedIn and X often block CI runners) |
 
 Run the em dash check locally before pushing if you want. It matches by codepoint, so
@@ -105,6 +106,11 @@ top item automatically gets the filled accent dot.
 
 **Portrait.** `img/portrait.jpg`, a 4:5 crop at 800×1000. Replace the file at the same
 path and the layout follows; the CSS crops to fill with `object-fit: cover`.
+
+**Replace the resume.** Overwrite `Navin-Kumar-Resume.pdf` at the same path and both
+links follow. The filename is the public download URL, so keep it stable; renaming it
+breaks any link already shared. Note the PDF carries a phone number, so a version with
+it removed is worth considering before wide circulation.
 
 **Add a certification.** Copy an `<li>` in the Education column of `#background`. If the
 credential has a public verification page, append an `<a>` inside the same `<li>`; it
