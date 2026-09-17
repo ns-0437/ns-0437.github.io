@@ -149,13 +149,14 @@ capabilities, because that is what the evaluation found.
 ## Projects on the page
 
 Listed in page order. The first four lead because they are the strongest, not because
-they are the newest; anything added later is appended. Seven carry a Live badge because
+they are the newest; anything added later is appended. Eight carry a Live badge because
 they have something a visitor can actually open:
 
 | Project | Live | Repo |
 |---|---|---|
 | AgentFuse | dashboard on GitHub Pages | `ns-0437/agentfuse` |
 | AI Defense Lab for Payment Security | app on Cloud Run | `ns-0437/mastercard-fraud-defense` |
+| Artwork Exception Resolution Agent | demo on GitHub Pages, stack on Cloud Run | `ns-0437/artwork-agent` |
 | The Internet's Worst User Journey | demo on GitHub Pages | `ns-0437/worst-user-journey` |
 | Relevant Section Identification | app on Cloud Run | `ns-0437/relevant-section-identification` |
 | Research Scout | agent API on Render, about 45s cold start | `ns-0437/research-scout` |
