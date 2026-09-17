@@ -310,6 +310,35 @@
 
       <article class="card is-feature">
         <div class="card-top">
+          <span class="card-kicker">Durable workflows</span>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <h3 class="card-title">Artwork Exception Resolution Agent</h3>
+        <p class="card-sub">Work that survives a crash or a slow reply</p>
+        <p class="card-body">
+          Resolves a blocker on a simulated sticker order end to end: inspect the file,
+          clarify intent, make one eligible repair, verify it, prepare a proof. State is
+          persisted at each step so a crash or a delayed customer answer resumes rather than
+          restarts. A Go API and worker with a private Python image service, Postgres and
+          object storage, all on Cloud Run with service-to-service auth by IAM.
+        </p>
+        <p class="card-body">
+          The evaluation is the interesting part. Across 34 fixtures the agent passed all 34
+          and resolved 18, but once a deterministic script was given the same escalation
+          ability it matched the agent exactly. The writeup says so plainly and favours the
+          scripted path at this scope, rather than claiming the model won.
+        </p>
+        <ul class="tags">
+          <li>Go</li><li>GraphQL</li><li>Python</li><li>Cloud Run</li><li>Postgres</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://ns-0437.github.io/artwork-agent/" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/ns-0437/artwork-agent" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card is-feature">
+        <div class="card-top">
           <span class="card-kicker">Observability</span>
           <span class="badge badge-live">Live</span>
         </div>
