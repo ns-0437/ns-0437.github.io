@@ -625,6 +625,8 @@
           <li>Held-out splits: 12 of 45 queries never inspected while tuning anything</li>
           <li>Generalization checks: a small synthetic out-of-domain input run beside the real
             one, which caught a filter that silently produced nothing on small toolkits</li>
+          <li>Baseline comparison: scoring an agent against a deterministic script on the same
+            fixtures, and reporting the result when the script wins</li>
           <li>Failure taxonomy: queries tagged by kind (word, symbol, table, figure, multi)
             because those classes fail for different reasons and an average hides it</li>
           <li>Detection metrics: mAP, per-class precision/recall, latency</li>
