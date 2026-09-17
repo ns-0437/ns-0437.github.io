@@ -608,6 +608,8 @@
           <li>Heuristics first, model second: deterministic scoring resolves most cases and
             only the unresolved remainder goes to an LLM in batched calls, keeping cost off
             an O(n&sup2;) search</li>
+          <li>Providers behind one swappable interface (Groq, OpenAI, Anthropic), so changing
+            model vendor is an implementation rather than a rewrite</li>
           <li>Embeddings: google/embeddinggemma-300m, an asymmetric prompt-conditioned model
             at 768 dimensions, plus text-embedding-3-small</li>
           <li>Cross-encoder: BAAI/bge-reranker-base</li>
