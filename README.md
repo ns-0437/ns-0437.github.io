@@ -158,7 +158,6 @@ they have something a visitor can actually open:
 | Relevant Section Identification | app on Cloud Run | `ns-0437/relevant-section-identification` |
 | AI Defense Lab for Payment Security | app on Cloud Run | `ns-0437/mastercard-fraud-defense` |
 | Artwork Exception Resolution Agent | demo on GitHub Pages, stack on Cloud Run | `ns-0437/artwork-agent` |
-| AI Résumé Optimizer | no | private, not linked |
 | Human Activity Recognition in the Dark | no | `ns-0437/Human-Activity-Recognition-in-Dark` |
 | Natural Sound Recognition | no | no repo |
 | Dep Graph Generator | graph on GitHub Pages | `ns-0437/dep-graph-generator` |
@@ -168,8 +167,6 @@ they have something a visitor can actually open:
 - The blog section was removed rather than shipped with placeholder posts. To bring it
   back, restore the `<section id="writing">` block from git history and point the
   fourth nav item at `#writing` again.
-- `AI Résumé Optimizer` shows "Source kept private" because `ns-0437/resume-optimizer`
-  is a private repo. Making it public turns that note back into a link.
 - `Natural Sound Recognition` has no repo on the account at all.
 
 ## Notes
