@@ -404,28 +404,6 @@
 
       <article class="card">
         <div class="card-top">
-          <span class="card-kicker">Autonomous research</span>
-          <span class="badge badge-live">Live</span>
-        </div>
-        <h3 class="card-title">Research Scout</h3>
-        <p class="card-sub">A post-meeting research agent</p>
-        <p class="card-body">
-          Every meeting leaves loose ends nobody chases: open questions, competitors that got
-          name-dropped, claims that went unchallenged. Research Scout mines the transcript for
-          them, runs live web research on each in parallel, and returns one sourced briefing
-          with inline links and honest caveats where sources disagreed.
-        </p>
-        <ul class="tags">
-          <li>Claude</li><li>Structured outputs</li><li>Web research</li><li>HMAC</li>
-        </ul>
-        <div class="card-links">
-          <a href="https://research-scout.onrender.com" target="_blank" rel="noopener">Live API <span aria-hidden="true">↗</span></a>
-          <a href="https://github.com/ns-0437/research-scout" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
           <span class="card-kicker">RAG</span>
         </div>
         <h3 class="card-title">AI Résumé Optimizer</h3>
@@ -509,32 +487,6 @@
         <div class="card-links">
           <a href="https://ns-0437.github.io/dep-graph-generator/" target="_blank" rel="noopener">Live graph <span aria-hidden="true">↗</span></a>
           <a href="https://github.com/ns-0437/dep-graph-generator" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <span class="card-kicker">Production agents</span>
-          <span class="badge badge-live">Live</span>
-        </div>
-        <h3 class="card-title">Reformly Support Copilot</h3>
-        <p class="card-sub">An agent that knows when to hand over</p>
-        <p class="card-body">
-          A customer-support agent for a fitness commerce app: order status, refunds,
-          subscription changes and policy Q&amp;A over tool-calling and RAG. Every turn has to
-          end by calling a <code>submit_final_response</code> tool carrying a confidence
-          number rather than returning free text, and that number is not taken at face value.
-          It is blended 60/40 with whether the tool calls actually succeeded, so a model that
-          sounds sure after a failed lookup gets overridden. Anything touching billing
-          escalates to a human regardless of confidence, and refund payments run as queued
-          idempotent jobs so a slow processor never hangs the chat.
-        </p>
-        <ul class="tags">
-          <li>Claude tool-calling</li><li>NestJS</li><li>pgvector</li><li>BullMQ</li><li>Next.js</li>
-        </ul>
-        <div class="card-links">
-          <a href="https://web-mu-kohl-77.vercel.app" target="_blank" rel="noopener">Live app <span aria-hidden="true">↗</span></a>
-          <a href="https://github.com/ns-0437/reformly-support-copilot" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
         </div>
       </article>
 

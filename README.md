@@ -149,7 +149,7 @@ capabilities, because that is what the evaluation found.
 ## Projects on the page
 
 Listed in page order. The first four lead because they are the strongest, not because
-they are the newest; anything added later is appended. Eight carry a Live badge because
+they are the newest; anything added later is appended. Six carry a Live badge because
 they have something a visitor can actually open:
 
 | Project | Live | Repo |
@@ -159,12 +159,10 @@ they have something a visitor can actually open:
 | AI Defense Lab for Payment Security | app on Cloud Run | `ns-0437/mastercard-fraud-defense` |
 | Artwork Exception Resolution Agent | demo on GitHub Pages, stack on Cloud Run | `ns-0437/artwork-agent` |
 | The Internet's Worst User Journey | demo on GitHub Pages | `ns-0437/worst-user-journey` |
-| Research Scout | agent API on Render, about 45s cold start | `ns-0437/research-scout` |
 | AI Résumé Optimizer | no | private, not linked |
 | Human Activity Recognition in the Dark | no | `ns-0437/Human-Activity-Recognition-in-Dark` |
 | Natural Sound Recognition | no | no repo |
 | Dep Graph Generator | graph on GitHub Pages | `ns-0437/dep-graph-generator` |
-| Reformly Support Copilot | app on Vercel | `ns-0437/reformly-support-copilot` |
 
 ## Still to do
 
