@@ -293,6 +293,37 @@
 
       <article class="card is-feature">
         <div class="card-top">
+          <span class="card-kicker">Retrieval</span>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <h3 class="card-title">Relevant Section Identification</h3>
+        <p class="card-sub">Which pages of this PDF answer my question?</p>
+        <p class="card-body">
+          Give it a PDF and a natural-language query and it returns the pages and section
+          headings that answer it. Prose, tables and figures take three separate chunking
+          paths so structure survives, then EmbeddingGemma vectors fuse with BM25 at 0.6.
+          Evaluated on 45 graded queries with 12 held out: <strong>nDCG@5 0.645 to
+          0.728</strong>, hit@3 82% to 93%.
+        </p>
+        <p class="card-body">
+          The interesting part is what did <em>not</em> work. HyDE, cross-encoder reranking
+          and metadata scoring were each built and measured, and each lost ground. Every
+          point came instead from repairing what the index contained: reading tables from the
+          embedded text layer rather than OCRing a picture of them, and stripping the running
+          header that made all 40 pages match a query equally. Retrieval quality here was
+          never a ranking problem, it was an extraction problem wearing a ranking costume.
+        </p>
+        <ul class="tags">
+          <li>EmbeddingGemma</li><li>ChromaDB</li><li>BM25</li><li>unstructured</li><li>pdfplumber</li><li>Cloud Run</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://relevant-section-identification-qqgcuwkcmq-uc.a.run.app" target="_blank" rel="noopener">Live app <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/ns-0437/relevant-section-identification" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card is-feature">
+        <div class="card-top">
           <span class="card-kicker">Adversarial ML</span>
           <span class="badge badge-live">Live</span>
         </div>
@@ -368,37 +399,6 @@
         <div class="card-links">
           <a href="https://ns-0437.github.io/worst-user-journey/" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
           <a href="https://github.com/ns-0437/worst-user-journey" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
-        </div>
-      </article>
-
-      <article class="card is-feature">
-        <div class="card-top">
-          <span class="card-kicker">Retrieval</span>
-          <span class="badge badge-live">Live</span>
-        </div>
-        <h3 class="card-title">Relevant Section Identification</h3>
-        <p class="card-sub">Which pages of this PDF answer my question?</p>
-        <p class="card-body">
-          Give it a PDF and a natural-language query and it returns the pages and section
-          headings that answer it. Prose, tables and figures take three separate chunking
-          paths so structure survives, then EmbeddingGemma vectors fuse with BM25 at 0.6.
-          Evaluated on 45 graded queries with 12 held out: <strong>nDCG@5 0.645 to
-          0.728</strong>, hit@3 82% to 93%.
-        </p>
-        <p class="card-body">
-          The interesting part is what did <em>not</em> work. HyDE, cross-encoder reranking
-          and metadata scoring were each built and measured, and each lost ground. Every
-          point came instead from repairing what the index contained: reading tables from the
-          embedded text layer rather than OCRing a picture of them, and stripping the running
-          header that made all 40 pages match a query equally. Retrieval quality here was
-          never a ranking problem, it was an extraction problem wearing a ranking costume.
-        </p>
-        <ul class="tags">
-          <li>EmbeddingGemma</li><li>ChromaDB</li><li>BM25</li><li>unstructured</li><li>pdfplumber</li><li>Cloud Run</li>
-        </ul>
-        <div class="card-links">
-          <a href="https://relevant-section-identification-qqgcuwkcmq-uc.a.run.app" target="_blank" rel="noopener">Live app <span aria-hidden="true">↗</span></a>
-          <a href="https://github.com/ns-0437/relevant-section-identification" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
         </div>
       </article>
 
