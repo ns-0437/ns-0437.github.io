@@ -639,6 +639,10 @@
             an O(n&sup2;) search</li>
           <li>Providers behind one swappable interface (Groq, OpenAI, Anthropic), so changing
             model vendor is an implementation rather than a rewrite</li>
+          <li>Google ADK agent configs: a coder that owns the patch plus a read-only analyzer
+            sub-agent, on Gemma 4 31B</li>
+          <li>Image generation from structured context with Gemini 3.1 Flash Lite Image, at a
+            fixed 1024&times;1024</li>
           <li>Embeddings: google/embeddinggemma-300m, an asymmetric prompt-conditioned model
             at 768 dimensions, plus text-embedding-3-small</li>
           <li>Cross-encoder: BAAI/bge-reranker-base</li>
@@ -658,6 +662,10 @@
             one, which caught a filter that silently produced nothing on small toolkits</li>
           <li>Baseline comparison: scoring an agent against a deterministic script on the same
             fixtures, and reporting the result when the script wins</li>
+          <li>Controlled fixtures with ground truth known by construction: abstentions counted
+            apart from detections, and a false accept treated as the failure that matters</li>
+          <li>SWE-bench-style scoring, where a patch counts only if the repository's own tests
+            pass</li>
           <li>Failure taxonomy: queries tagged by kind (word, symbol, table, figure, multi)
             because those classes fail for different reasons and an average hides it</li>
           <li>Detection metrics: mAP, per-class precision/recall, latency</li>
@@ -687,6 +695,8 @@
             storage with lifecycle expiry</li>
           <li>Service-to-service auth with IAM rather than network ingress, plus
             server-side read-only guards on a public demo</li>
+          <li>Reproducible releases: frozen, hash-verified submission builds with CPU-only CI
+            on Linux and Windows</li>
           <li>Familiar with AWS (ECS/EKS), Git/GitHub, REST APIs</li>
         </ul>
       </div>
