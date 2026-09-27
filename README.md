@@ -141,21 +141,34 @@ do not read as one list.
 
 Retrieval and document processing content is sourced from the Relevant Section
 Identification technical report; the reliability, fallback and generalization lines trace
-to the Reformly copilot and dependency graph generator repos. Keep it that way: every claim
+to the Reformly copilot and dependency graph generator repos, and the ADK, image-generation, fixture and
+SWE-bench lines to the Gemma 4 agent lab and the G2 ad-generation repo. Keep it that way: every claim
 should trace to a project or a measurement, including the negative ones. HyDE, cross-encoder
 reranking and metadata scoring are listed as **rejected with deltas** rather than as
 capabilities, because that is what the evaluation found.
 
+## The Competitions section
+
+`#competitions` sits between Projects and Background, styled as a ledger rather than a
+card grid so the two read differently. Each entry is an `<li class="comp">`: the left
+column names the event (host, event, year, and a status pill only while it is genuinely
+still open), the title names what was built, then up to three headline numbers and links.
+
+Every number is taken from the repo's own results table. Keep the Mastercard entry named
+as the Innovation Challenge at GFF Mumbai: it used Kaggle datasets but was not a Kaggle
+competition. Remove the Gemma entry's `In progress` pill once the competition closes.
+
 ## Projects on the page
 
 Listed in page order. The first four lead because they are the strongest, not because
-they are the newest; anything added later is appended. Five carry a Live badge because
+they are the newest; anything added later is appended. Six carry a Live badge because
 they have something a visitor can actually open:
 
 | Project | Live | Repo |
 |---|---|---|
 | AgentFuse | dashboard on GitHub Pages | `ns-0437/agentfuse` |
 | Relevant Section Identification | app on Cloud Run | `ns-0437/relevant-section-identification` |
+| Structured-Context Ad Generation | demo on GitHub Pages | `ns-0437/Image-generation-ad-quality-checker` |
 | AI Defense Lab for Payment Security | app on Cloud Run | `ns-0437/mastercard-fraud-defense` |
 | Artwork Exception Resolution Agent | demo on GitHub Pages, stack on Cloud Run | `ns-0437/artwork-agent` |
 | Human Activity Recognition in the Dark | no | `ns-0437/Human-Activity-Recognition-in-Dark` |
