@@ -156,7 +156,9 @@ still open), the title names what was built, then up to three headline numbers a
 
 Every number is taken from the repo's own results table. Keep the Mastercard entry named
 as the Innovation Challenge, with no venue named: it used Kaggle datasets but was not a Kaggle
-competition. Remove the Gemma entry's `In progress` pill once the competition closes.
+competition. Remove the Gemma entry's `In progress` pill once the competition closes. The OpenAI
+entry's numbers come from the header of AgentFuse's `REPORT.md` (real-run suite:
+6 positives, 28 healthy negatives), not the older Phase 1 baseline.
 
 ## Projects on the page
 
