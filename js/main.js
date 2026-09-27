@@ -25,7 +25,7 @@
   if (year) year.textContent = new Date().getFullYear();
 
   /* ---------- scroll reveal ---------- */
-  var targets = document.querySelectorAll('.card, .bg-col, .tl-item, .contact');
+  var targets = document.querySelectorAll('.card, .bg-col, .tl-item, .comp, .contact');
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
