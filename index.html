@@ -322,6 +322,35 @@
         </div>
       </article>
 
+      <article class="card is-feature" id="adgen">
+        <div class="card-top">
+          <span class="card-kicker">Generative evaluation</span>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <h3 class="card-title">Structured-Context Ad Generation</h3>
+        <p class="card-sub">An evaluator you can actually check</p>
+        <p class="card-body">
+          Built for the G2 AI Engineering Hackathon. A product photo, a geography, a season
+          and a line of copy go in; a 1024&times;1024 ad from Gemini comes out with a verdict
+          on whether it honoured the request. The hard half is proving the checker catches a
+          redrawn logo, a contradicted season, or <code>20% off</code> rendered as
+          <code>30% off</code>.
+        </p>
+        <p class="card-body">
+          On fixtures with ground truth known by construction it caught
+          <strong>5 of 6 defects with zero false accepts</strong>, abstaining on the sixth.
+          It also surfaced a real weakness, rupee prices on non-Indian campaigns caught once
+          in three, which the writeup reports as unresolved. 251 tests run offline.
+        </p>
+        <ul class="tags">
+          <li>Gemini image API</li><li>Python</li><li>Evaluation</li><li>Golden dataset</li><li>Offline replay</li>
+        </ul>
+        <div class="card-links">
+          <a href="https://ns-0437.github.io/Image-generation-ad-quality-checker/" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/ns-0437/Image-generation-ad-quality-checker" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
       <article class="card is-feature">
         <div class="card-top">
           <span class="card-kicker">Adversarial ML</span>
@@ -347,7 +376,7 @@
         </div>
       </article>
 
-      <article class="card is-feature">
+      <article class="card">
         <div class="card-top">
           <span class="card-kicker">Durable workflows</span>
           <span class="badge badge-live">Live</span>
