@@ -278,7 +278,8 @@
           breaker the moment a failure mode crosses a threshold: an infinite tool loop, a slow
           slide off the original objective, a logical trap where the model reasons flawlessly
           from a false premise, or a budget quietly burning to zero. On a trip it freezes
-          state, asks a separate reasoning model for a steering correction, and resumes. When
+          state and steers the agent back with a deterministic recovery ladder, which measured
+          better than letting a reasoning model write the correction. When
           recovery isn't safe it escalates to a human instead of blindly retrying. The premise
           throughout: an agent that has drifted is the worst possible judge of whether it
           drifted. One engine, three runtimes.
