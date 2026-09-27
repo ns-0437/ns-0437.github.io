@@ -155,7 +155,7 @@ column names the event (host, event, year, and a status pill only while it is ge
 still open), the title names what was built, then up to three headline numbers and links.
 
 Every number is taken from the repo's own results table. Keep the Mastercard entry named
-as the Innovation Challenge at GFF Mumbai: it used Kaggle datasets but was not a Kaggle
+as the Innovation Challenge, with no venue named: it used Kaggle datasets but was not a Kaggle
 competition. Remove the Gemma entry's `In progress` pill once the competition closes.
 
 ## Projects on the page
