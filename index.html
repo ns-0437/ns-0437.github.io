@@ -56,7 +56,8 @@
     "AI agents", "Retrieval-augmented generation", "Hybrid search",
     "Model evaluation", "Supervised fine-tuning", "Knowledge graphs",
     "LLM tool orchestration", "Coding agents",
-    "Generative image evaluation", "MLOps"
+    "Generative image evaluation", "MLOps", "Kubernetes",
+    "Google ADK", "vLLM", "Reproducible evaluation"
   ],
   "sameAs": [
     "https://github.com/ns-0437",
@@ -493,17 +494,18 @@
           <p class="comp-body">
             A coding agent on Google ADK for Gemma 4 31B: a coder that owns the patch, and a
             read-only analyzer it consults when navigation is unclear. A patch scores only if
-            the hidden task's tests pass. Both submitted versions scored 0.06, published as
-            measured, behind frozen, hash-verified releases.
+            the hidden task's tests pass. V5 reached a verified Kaggle public score of 0.13,
+            up from V3's 0.06. Development work covers reasoning-enabled inference, runtime
+            budgets, and controlled evaluations with frozen, hash-verified releases.
           </p>
           <div class="comp-stats">
-            <div class="stat"><span class="stat-num">0.06</span><span class="stat-label">public score</span></div>
-            <div class="stat"><span class="stat-num">2</span><span class="stat-label">versions submitted</span></div>
-            <div class="stat"><span class="stat-num">82</span><span class="stat-label">CPU test assertions</span></div>
+            <div class="stat"><span class="stat-num">0.13</span><span class="stat-label">V5 public score</span></div>
+            <div class="stat"><span class="stat-num">0.06</span><span class="stat-label">V3 public score</span></div>
+            <div class="stat"><span class="stat-num">36</span><span class="stat-label">offline CI checks</span></div>
           </div>
           <div class="comp-links">
-            <a href="https://ns-0437.github.io/gemma4-agent-lab/docs/explorer/" target="_blank" rel="noopener">Results explorer <span aria-hidden="true">↗</span></a>
-            <a href="https://github.com/ns-0437/gemma4-agent-lab" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/ns-0437/gemma4-developer-agent/blob/main/reference/submission_v5_status_2026-10-20/submissions.json" target="_blank" rel="noopener">Score evidence <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/ns-0437/gemma4-developer-agent" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </li>
@@ -667,6 +669,8 @@
             model vendor is an implementation rather than a rewrite</li>
           <li>Google ADK agent configs: a coder that owns the patch plus a read-only analyzer
             sub-agent, on Gemma 4 31B</li>
+          <li>vLLM inference serving with LiteLLM integration: reasoning-enabled generation,
+            tool-call diagnostics, and bounded coding-agent runs</li>
           <li>Image generation from structured context with Gemini 3.1 Flash Lite Image, at a
             fixed 1024&times;1024</li>
           <li>Embeddings: google/embeddinggemma-300m, an asymmetric prompt-conditioned model
@@ -692,6 +696,10 @@
             apart from detections, and a false accept treated as the failure that matters</li>
           <li>SWE-bench-style scoring, where a patch counts only if the repository's own tests
             pass</li>
+          <li>Paired coding-agent evaluations: verified solves, graded failures, ungraded
+            attempts, and environment failures reported separately</li>
+          <li>JUnit control replay, checkout import provenance, sandbox cleanup checks,
+            and mutation tests for evaluation guards</li>
           <li>Failure taxonomy: queries tagged by kind (word, symbol, table, figure, multi)
             because those classes fail for different reasons and an average hides it</li>
           <li>Detection metrics: mAP, per-class precision/recall, latency</li>
@@ -717,7 +725,8 @@
           <li>Durable multi-step workflows: state persisted per step so a crash or a delayed
             external reply resumes instead of restarting</li>
           <li>CI/CD: GitHub Actions, automated build and deploy pipelines</li>
-          <li>Deploys: Docker, GCP Cloud Run, Vercel, Neon, Supabase, Upstash, object
+          <li>Containers &amp; orchestration: Docker, Kubernetes</li>
+          <li>Deploys: GCP Cloud Run, Vercel, Neon, Supabase, Upstash, object
             storage with lifecycle expiry</li>
           <li>Service-to-service auth with IAM rather than network ingress, plus
             server-side read-only guards on a public demo</li>
